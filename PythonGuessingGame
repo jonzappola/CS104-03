@@ -1,0 +1,34 @@
+import random
+theComputerNumber = random.randint(1,1000001)
+numberofguesses = 20
+lowrange = 1
+highrange = 1000000
+
+while numberofguesses >= 0:
+    print("Take a guess: ")
+    guess = input()
+    playerguess = int(guess)
+    
+    if playerguess > highrange or playerguess < lowrange:
+        numberofguesses = numberofguesses - 1
+        print("Your guess is out of range, try again. You have ",numberofguesses," guesses left.")
+    
+    elif playerguess < theComputerNumber:
+        numberofguesses = numberofguesses - 1
+        print("Your guess is too low! You have ",numberofguesses," guesses left.")
+        lowrange = playerguess
+        print("(Highrange: ",highrange,"Low Range: ",lowrange,")")
+       
+    elif playerguess > theComputerNumber:
+        numberofguesses = numberofguesses - 1
+        print("Your guess is too high! You have ",numberofguesses," guesses left")
+        highrange = playerguess
+        print("(Highrange: ",highrange,"Low Range: ",lowrange,")")
+
+    elif playerguess == theComputerNumber: 
+        print("You won! You guessed the number in ",numberofguesses," tries.")
+        break
+
+    if numberofguesses == 0:
+        print("You ran out of guesses, you lose.")
+        break
