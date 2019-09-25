@@ -1,34 +1,37 @@
 import random
 theComputerNumber = random.randint(1,1000001)
-numberofguesses = 20
-lowrange = 1
-highrange = 1000000
-
-while numberofguesses >= 0:
+numberOfGuesses = 20
+lowGuessRange = 1
+highGuessRange = 1000000
+gameOver = False
+while numberOfGuesses >= 0:
     print("Take a guess: ")
     guess = input()
-    playerguess = int(guess)
+    playerGuess = int(guess)
     
-    if playerguess > highrange or playerguess < lowrange:
-        numberofguesses = numberofguesses - 1
-        print("Your guess is out of range, try again. You have ",numberofguesses," guesses left.")
+    if playerGuess > highGuessRange or playerGuess < lowGuessRange:
+        numberOfGuesses = numberOfGuesses - 1
+        print("Your guess is out of range, try again. You have ",numberOfGuesses," guesses left.")
     
-    elif playerguess < theComputerNumber:
-        numberofguesses = numberofguesses - 1
-        print("Your guess is too low! You have ",numberofguesses," guesses left.")
-        lowrange = playerguess
-        print("(Highrange: ",highrange,"Low Range: ",lowrange,")")
+    elif playerGuess < theComputerNumber:
+        numberOfGuesses = numberOfGuesses - 1
+        print("Your guess is too low! You have ",numberOfGuesses," guesses left.")
+        lowGuessRange = playerGuess
+        print("(Highrange: ",highGuessRange,"Low Range: ",lowGuessRange,")")
        
-    elif playerguess > theComputerNumber:
-        numberofguesses = numberofguesses - 1
-        print("Your guess is too high! You have ",numberofguesses," guesses left")
-        highrange = playerguess
-        print("(Highrange: ",highrange,"Low Range: ",lowrange,")")
+    elif playerGuess > theComputerNumber:
+        numberOfGuesses = numberOfGuesses - 1
+        print("Your guess is too high! You have ",numberOfGuesses," guesses left")
+        highGuessRange = playerGuess
+        print("(Highrange: ",highGuessRange,"Low Range: ",lowGuessRange,")")
 
-    elif playerguess == theComputerNumber: 
-        print("You won! You guessed the number in ",numberofguesses," tries.")
-        break
+    elif playerGuess == theComputerNumber: 
+        print("You won! You guessed the number in ",numberOfGuesses," tries.")
+        gameOver = True
 
-    if numberofguesses == 0:
+    if numberOfGuesses == 0:
         print("You ran out of guesses, you lose.")
+        gameOver = True
+
+    if gameOver == True:
         break
