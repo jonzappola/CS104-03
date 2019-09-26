@@ -4,6 +4,7 @@ numberOfGuesses = 20
 lowGuessRange = 1
 highGuessRange = 1000000
 gameOver = False
+print ("The number range is " + str(lowGuessRange) + " to " + str(highGuessRange))
 while numberOfGuesses >= 0:
     print("Take a guess: ")
     guess = input()
