@@ -1,0 +1,16 @@
+names = []
+
+for x in range(10):
+  n = input("Enter a name: ")
+  names.append(n)
+  
+KeepSearching = True
+
+while KeepSearching = True:
+  search = input("Enter a name to search for or 'End' to end the program: ")
+  if search in names:
+    print("The name was found")
+  elif search == "End" or "end":
+    KeepSearching = False
+  else: 
+    print("The name was not found")
