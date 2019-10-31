@@ -1,0 +1,25 @@
+#Python Richter Scale Calculation
+#Jonathan Zappola
+#s1248773
+
+end = True
+while end == True:
+    richter = float(input("Enter the Richter scale value or -99 to end: "))
+    if richter == -99:
+        end = False
+    elif richter >= 8.00:
+        print("Most structures fall")
+    elif richter <= 7.99 and richter >= 7.0:
+        print("Many buildings destroyed")
+    elif richter <= 6.99 and richter >= 6.0:
+        print("Many buildings considerabley damaged, some collapse")
+    elif richter <= 5.99 and richter >= 4.5:
+        print("Damage to poorly constructed buildings")
+    elif richter <= 4.49 and richter >= 0:
+        print("No destruction of buildings")
+    elif richter < 0:
+        print("Value must be greater than 0")
+    else:
+        break
+        
+        
